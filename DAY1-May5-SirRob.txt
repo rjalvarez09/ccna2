@@ -133,9 +133,9 @@ vlan 10
 vlan 50
    name IPCameraVLAN
 vlan 69
-   name vlanNIrobert
+   name vlanNetflix
 vlan 70
-    name EXTRAVLAN
+    name GIPITPERA
 vlan 71
     name HRD-POLICY
 vlan 100
@@ -172,10 +172,10 @@ config t
 ip routing
 ip dhcp pool CAMERA6
 host 10.51.50.6 255.255.255.0
-client-identifier 001a.xxxx.yyyy
+client-identifier 001a.0709.c268
 ip dhcp pool CAMERA8
-host 10.51.50.8 255.255.255.0
-client-identifier 001a.xxxx.yyyy 
+host 10.51.50.8 255.255.255.0 
+client-identifier 001a.070a.27ed
 end
 show ip dhcp binding
 
@@ -246,18 +246,18 @@ ephone-dn 7
 ephone-dn 8
   number 5188
  ephone-dn 9
-   number 5199
+   number 5167
 ephone-dn 10
- number 5198
+ number 5123
 Ephone 1
-  Mac-address cafe.face.baba
+  Mac-address 6cfa.8972.fc47
   type 8945
-  button 1:8 2:7 3:6 4:5
+  button 1:8 2:7 3:6 4:9
   restart
 Ephone 2
-  Mac-address fafa.caca.baba
+  Mac-address b4e9.b0b0.487b
   type 8945
-  button 1:4 2:3 3:2 4:1
+  button 1:4 2:3 3:2 4:10
   restart  
 end
 
@@ -288,18 +288,18 @@ configure terminal
  destination-pattern 11..
  session target ipv4:10.11.100.8
  codec g711ULAW
-  !dial-peer voice 12 Voip
-  !destination-pattern 12..
-  !session target ipv4:10.12.100.8
-  !codec g711ULAW
+  dial-peer voice 12 Voip
+  destination-pattern 12..
+  session target ipv4:10.12.100.8
+  codec g711ULAW
 dial-peer voice 21 Voip
  destination-pattern 21..
  session target ipv4:10.21.100.8
  codec g711ULAW
-dial-peer voice 22 Voip
- destination-pattern 22..
- session target ipv4:10.22.100.8
- codec g711ULAW
+!dial-peer voice 22 Voip
+ !destination-pattern 22..
+ !session target ipv4:10.22.100.8
+ !codec g711ULAW
 dial-peer voice 31 Voip
  destination-pattern 31..
  session target ipv4:10.31.100.8
@@ -316,10 +316,10 @@ dial-peer voice 42 Voip
  destination-pattern 42..
  session target ipv4:10.42.100.8
  codec g711ULAW
-dial-peer voice 51 Voip
- destination-pattern 51..
- session target ipv4:10.51.100.8
- codec g711ULAW
+ !dial-peer voice 51 Voip
+ !destination-pattern 51..
+ !session target ipv4:10.51.100.8
+ !codec g711ULAW
 dial-peer voice 52 Voip
  destination-pattern 52..
  session target ipv4:10.52.100.8
